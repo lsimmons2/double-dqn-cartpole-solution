@@ -174,9 +174,18 @@ def plot_trials(trials):
     plt.show()
 
 
+def plot_individual_trial(trial):
+    plt.plot(trial)
+    plt.ylabel('Steps in Episode')
+    plt.xlabel('Episode')
+    plt.title('Double DQN CartPole v-0 Steps in Select Trial')
+    plt.show()
+
+
 if __name__ == '__main__':
     trials = test_agent()
-    print 'Saving', file_name
-    np.save('double_dqn_cartpole_trials.npy', trials)
+    # print 'Saving', file_name
+    # np.save('double_dqn_cartpole_trials.npy', trials)
     # trials = np.load('double_dqn_cartpole_trials.npy')
-    # plot_trials(trials)
+    plot_trials(trials)
+    plot_individual_trial(trials[1])
